@@ -408,6 +408,21 @@ https://api.connectycube.com/chat/Dialog/5c091060e588ce59fdf873dc
 ```
 
 
+## Roles and Priviliges
+There are different roles of users in a chat dialog:
+
+**Regular user** - user who can send and receive messages.
+
+**Admin** - advanced user with moderation privileges.
+
+**Super admin** - chat owner (creator) with all possible privileges.
+
+
+ Roles  | Private chat	 | Group chat	  | Public chat	 | Broadcast
+------------- | ------------- | ------------- | ------------- | ------------- 
+Regular user  | - send/receive messages <br/> - delete own message (one side/both sides) <br/> - delete chat dialog for themselve  | - send/receive messages <br/> - delete own message (one side/both sides) <br/> - delete chat dialog for themselve <br/> - add more users <br /> - change name, photo, description  | - send/receive messages <br/> - delete own message (one side/both sides) <br/> - delete chat dialog for themselves (or unsubscribe)  | - receive messages <br/> - delete chat dialog for themselve
+Admin  | -  | Content Cell  | Content Cell  | Content Cell 
+Super admin  | -  | Content Cell  | Content Cell  | Content Cell 
 
 
 
