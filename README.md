@@ -408,6 +408,68 @@ https://api.connectycube.com/chat/Dialog/5c091060e588ce59fdf873dc
 ```
 
 
+
+## Get Dialogs
+You need to pass type: 2 and ids of opponents you want to create a chat with:
+
+### Code
+```javascript
+const filters = {};
+
+ConnectyCube.chat.dialog
+  .list(filters)
+  .then((result) => {})
+  .catch((error) => {});
+```
+
+### Endpoint
+GET https://api.connectycube.com/chat/Dialog
+
+### Request Example
+```javascript
+curl -X GET \
+-H "CB-Token: <TOKEN>" \
+https://api.connectycube.com/chat/Dialog
+```
+
+### Response
+```javascript
+{
+    "total_entries": 4,
+    "skip": 0,
+    "limit": 1000,
+    "items": [
+        {
+            "_id": "5c094c0ce588ce6856f87422",
+            "admins_ids": [29085],
+            "created_at": "2018-12-06T16:19:24Z",
+            "description": "Cute chat",
+            "last_message": "nope?",
+            "last_message_date_sent": 1544452627,
+            "last_message_id": "5c0e7a13e588ce6b6f3ebf80",
+            "last_message_user_id": 29086,
+            "name": "hello kitty",
+            "occupants_ids": [
+                29085,
+                29086,
+                29087
+            ],
+            "photo": null,
+            "pinned_messages_ids": ["5c0e7a13e588ce6b6f3ebf80"],
+            "type": 2,
+            "updated_at": "2018-12-10T14:37:07Z",
+            "user_id": 29085,
+            "unread_messages_count": 1,
+            "xmpp_room_jid": "105_5c094c0ce588ce6856f87422@muc.chatstage.connectycube.com"
+        },
+        ...
+    ]
+}
+```
+
+
+
+
 ## Roles and Priviliges
 There are different roles of users in a chat dialog:
 
