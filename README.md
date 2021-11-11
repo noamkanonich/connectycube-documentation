@@ -257,7 +257,10 @@ ConnectyCube.chat.dialog
   .catch((error) => {});
 ```
 
-### API
+### Endpoint
+POST https://api.connectycube.com/chat/Dialog
+
+### Request Example
 ```javascript
 curl -X POST \
 -H "Content-Type: application/json" \
@@ -289,32 +292,114 @@ https://api.connectycube.com/chat/Dialog
 }
 ```
 
-## Add Users To Dialog (Update Dialog)
+
+
+## Add/Remove Users To Dialog (Update Dialog)
+User can update group chat name, photo or add/remove occupants, based on their role and privileges.
+
+
+### Add Users
+```javascript
+const dialogId = "5356c64ab35c12bd3b108a41";
+const toUpdateParams = { push_all: { occupants_ids: [29088] } };
+
+ConnectyCube.chat.dialog
+  .update(dialogId, toUpdateParams)
+  .then((dialog) => {})
+  .catch((error) => {});
+```
+
+### Remove Users
+Important note: Only group chat owner can remove other users from group chat.
+
+```javascript
+const dialogId = "5356c64ab35c12bd3b108a41";
+const toUpdateParams = { pull_all: { occupants_ids: [29088] } };
+
+ConnectyCube.chat.dialog
+  .update(dialogId, toUpdateParams)
+  .then((dialog) => {})
+  .catch((error) => {});
+```
+
+### Endpoint
+PUT https://api.connectycube.com/chat/Dialog/{dialog_id}
+
+### Request Example
+curl -X PUT \
+-H "Content-Type: application/json" \
+-H "CB-Token: <TOKEN>" \
+-d '{"name":"Crossfit2","push_all":{"occupants_ids":[29088],"pinned_messages_ids":["5c123fdce588ce064043f53a"]},"photo":"gym2.jpeg"}' \
+https://api.connectycube.com/chat/Dialog/5c123f75e588ce063e43f541
+
+
+### Response
+```javascript
+{
+  "_id": "5c123f75e588ce063e43f541",
+  "admins_ids": [],
+  "created_at": "2018-12-13T11:16:05Z",
+  "description": "strong man",
+  "last_message": "cool",
+  "last_message_date_sent": 1544699868,
+  "last_message_id": "5c123fdce588ce064043f53a",
+  "last_message_user_id": 29085,
+  "name": "Crossfit2",
+  "occupants_ids": [29085, 29086, 29087, 29088],
+  "photo": "gym2.jpeg",
+  "pinned_messages_ids": ["5c123fdce588ce064043f53a"],
+  "type": 2,
+  "updated_at": "2018-12-13T11:21:21Z",
+  "user_id": 29085,
+  "unread_messages_count": 0,
+  "xmpp_room_jid": "105_5c123f75e588ce063e43f541@muc.chatstage.connectycube.com"
+}
+```
+
+
+  
+
+## Remove Dialog 
 
 
 ### Code
 ```javascript
-const userCredentials = {
-  userId: 4448514,
-  password: "awesomepwd",
-};
 
-ConnectyCube.chat
-  .connect(userCredentials)
-  .then(() => {
-    // connected
-  })
-  .catch((error) => {});
 ```
 
-### API
+### Endpoint
+PUT https://api.connectycube.com/chat/Dialog/{dialog_id}
+
+### Request Example
+curl -X PUT \
+-H "Content-Type: application/json" \
+-H "CB-Token: <TOKEN>" \
+-d '{"name":"Crossfit2","push_all":{"occupants_ids":[29088],"pinned_messages_ids":["5c123fdce588ce064043f53a"]},"photo":"gym2.jpeg"}' \
+https://api.connectycube.com/chat/Dialog/5c123f75e588ce063e43f541
+
 
 ### Response
 ```javascript
+{
+  "_id": "5c123f75e588ce063e43f541",
+  "admins_ids": [],
+  "created_at": "2018-12-13T11:16:05Z",
+  "description": "strong man",
+  "last_message": "cool",
+  "last_message_date_sent": 1544699868,
+  "last_message_id": "5c123fdce588ce064043f53a",
+  "last_message_user_id": 29085,
+  "name": "Crossfit2",
+  "occupants_ids": [29085, 29086, 29087, 29088],
+  "photo": "gym2.jpeg",
+  "pinned_messages_ids": ["5c123fdce588ce064043f53a"],
+  "type": 2,
+  "updated_at": "2018-12-13T11:21:21Z",
+  "user_id": 29085,
+  "unread_messages_count": 0,
+  "xmpp_room_jid": "105_5c123f75e588ce063e43f541@muc.chatstage.connectycube.com"
+}
 ```
-
-
-
 
 
 
