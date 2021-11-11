@@ -152,7 +152,7 @@ ConnectyCube.users
 }
 ```
 
-## User Sign In (Login)
+## User Sign In (Login Authentication)
 If you have an application session, you can upgrade it to a user session by calling login method. <br />
 This login method will create a user session and make the user logged in.
 If the user is not registered to connecty cube, it will be added to user list.
@@ -211,23 +211,6 @@ https://api.connectycube.com/login
 ```
 
 
-## Authentication via external identity provider
-
-
-
-### Code
-```javascript
-
-```
-
-### API
-
-### Response
-```javascript
-
-```
-
-
 
 ## Delete User
 A user can delete himself from the platform:
@@ -239,6 +222,32 @@ ConnectyCube.users
   .delete()
   .then((result) => {})
   .catch((error) => {});
+```
+
+### Endpoint
+DELETE https://api.connectycube.com/users/{user_id}
+
+
+### Request Example
+```javascript
+curl -X DELETE \
+-H "CB-Token: <TOKEN>" \
+https://api.connectycube.com/users/51959
+```
+
+### Response
+```javascript
+Status: 200
+```
+
+
+## Authentication via external identity provider
+
+
+
+### Code
+```javascript
+
 ```
 
 ### API
