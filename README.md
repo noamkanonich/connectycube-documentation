@@ -113,7 +113,64 @@ ConnectyCube.users
 ### API
 
 ### Response
+{
+  "id": 81,
+  "full_name": "Marvin Simon",
+  "email": "awesomeman@gmail.com",
+  "login": "marvin18",
+  "phone": "47802323143",
+  "website": "https://dozensofdreams.com",
+  "created_at": "2018-06-15T14:20:54Z",
+  "updated_at": "2018-12-05T11:58:02Z",
+  "last_request_at": "2018-12-05T11:58:02Z",
+  "external_user_id": null,
+  "facebook_id": null,
+  "twitter_id": null,
+  "custom_data": "{\"middle_name\":\"Bartoleo\"}",
+  "blob_id": null,
+  "avatar": "",
+  "user_tags": "iphone,apple"
+}
 
+
+## User Sign In (Login)
+If you have an application session, you can upgrade it to a user session by calling login method. <br />
+This login method will create a user session and make the user logged in.
+If the user is not registered to connecty cube, it will be added to user list.
+
+
+### Code
+```javascript
+const userCredentials = { login: "cubeuser", password: "awesomepwd" };
+// const userCredentials = { email: 'cubeuser@gmail.com', password: 'awesomepwd' };
+// const userCredentials = { provider: 'facebook', keys: {token: 'a876as7db...asg34dasd8wqe'} };
+
+ConnectyCube.login(userCredentials)
+  .then((user) => {})
+  .catch((error) => {});
+```
+
+### API
+
+### Response
+{
+  "id": 47592,
+  "full_name": "John Smith",
+  "email": "johnsmith@gmail.com",
+  "login": "johnsmith",
+  "phone": null,
+  "website": null,
+  "created_at": "2018-11-23T09:42:36Z",
+  "updated_at": "2018-12-06T07:56:26Z",
+  "last_request_at": "2018-12-06T07:59:22Z",
+  "external_user_id": null,
+  "facebook_id": null,
+  "twitter_id": null,
+  "blob_id": null,
+  "custom_data": null,
+  "avatar": null,
+  "user_tags": null
+}
 
 
 
