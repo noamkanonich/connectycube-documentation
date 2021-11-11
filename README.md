@@ -90,6 +90,23 @@ curl -X POST \
 https://api.connectycube.com/session
 ```
 
+### Python
+```python
+import requests
+from requests.structures import CaseInsensitiveDict
+
+url = "https://api.connectycube.com/session"
+
+headers = CaseInsensitiveDict()
+headers["Content-Type"] = "application/json"
+
+data = '{"application_id": "1", "auth_key": "29WfrNWdvkhmX6V", "nonce": "111", "timestamp": "1544010993",  "signature": "46fd163f78f52a0f8122d3758d6282923471d55f", "user":{"login": "john", "password": "11111111"}}'
+
+resp = requests.post(url, headers=headers, data=data)
+
+print(resp.status_code)
+```
+
 ### Response
 ```javascript
 {
@@ -145,7 +162,35 @@ ConnectyCube.users
   .catch((error) => {});
 ```
 
-### API
+### Endpoint
+POST https://api.connectycube.com/users
+
+### Request Example
+```javascript
+curl -X POST \
+-H "Content-Type: application/json" \
+-H "CB-Token: <TOKEN>" \
+-d '{"user": {"login": "Dacia", "password": "petU4or!", "email": "dacia_k@domain.com", "facebook_id": "91234409", "twitter_id": "83510562734", "full_name": "Dacia Kail ", "phone": "+6110797757"}}' \
+https://api.connectycube.com/users
+```
+
+### Python
+```python
+import requests
+from requests.structures import CaseInsensitiveDict
+
+url = "https://api.connectycube.com/users"
+
+headers = CaseInsensitiveDict()
+headers["Content-Type"] = "application/json"
+headers["CB-Token"] = "<TOKEN>"
+
+data = '{"user": {"login": "Dacia", "password": "petU4or!", "email": "dacia_k@domain.com", "facebook_id": "91234409", "twitter_id": "83510562734", "full_name": "Dacia Kail ", "phone": "+6110797757"}}'
+
+resp = requests.post(url, headers=headers, data=data)
+
+print(resp.status_code)
+```
 
 ### Response
 ```javascript
@@ -195,7 +240,6 @@ ConnectyCube.login(userCredentials)
 ### Endpoint
 POST https://api.connectycube.com/login
 
-
 ### Request Example
 ```javascript
 curl -X POST \
@@ -203,6 +247,24 @@ curl -X POST \
 -H "CB-Token:  <TOKEN>" \
 -d '{"login": "johnsmith", "password": "7665727zxc"}' \
 https://api.connectycube.com/login
+```
+
+### Python
+```python
+import requests
+from requests.structures import CaseInsensitiveDict
+
+url = "https://api.connectycube.com/login"
+
+headers = CaseInsensitiveDict()
+headers["Content-Type"] = "application/json"
+headers["CB-Token"] = "<TOKEN>"
+
+data = '{"login": "johnsmith", "password": "7665727zxc"}'
+
+resp = requests.post(url, headers=headers, data=data)
+
+print(resp.status_code)
 ```
 
 ### Response
@@ -250,6 +312,21 @@ DELETE https://api.connectycube.com/users/{user_id}
 curl -X DELETE \
 -H "CB-Token: <TOKEN>" \
 https://api.connectycube.com/users/51959
+```
+
+### Python
+```python
+import requests
+from requests.structures import CaseInsensitiveDict
+
+url = "https://api.connectycube.com/users/51959"
+
+headers = CaseInsensitiveDict()
+headers["CB-Token"] = "<TOKEN>"
+
+resp = requests.delete(url, headers=headers)
+
+print(resp.status_code)
 ```
 
 ### Response
