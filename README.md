@@ -4,7 +4,7 @@
 Initialize framework with your ConnectyCube application credentials. <br /> 
 You can access your application credentials in ConnectyCube Dashboard:
 
-## Code
+### Code
 ```javascript
 const CREDENTIALS = {
   appId: 21,
@@ -15,9 +15,9 @@ const CREDENTIALS = {
 ConnectyCube.init(CREDENTIALS);
 ```
 
-## API
+### API
 
-## Response
+### Response
 
 
 ## Create a session
@@ -88,7 +88,31 @@ ConnectyCube.createSession(userCredentials)
 
 
 
+## User Sign Up
+User will sign up to connecty cube user list that connects with the our application
 
+### Code
+```javascript
+const userProfile = {
+  login: "marvin18",
+  password: "supersecurepwd",
+  email: "awesomeman@gmail.com",
+  full_name: "Marvin Simon",
+  phone: "47802323143",
+  website: "https://dozensofdreams.com",
+  tag_list: ["iphone", "apple"],
+  custom_data: JSON.stringify({ middle_name: "Bartoleo" })
+};
+
+ConnectyCube.users
+  .signup(userProfile)
+  .then((user) => {})
+  .catch((error) => {});
+```
+
+### API
+
+### Response
 
 
 
