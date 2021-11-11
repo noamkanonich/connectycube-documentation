@@ -24,11 +24,24 @@ ConnectyCube.init(CREDENTIALS);
 For using the ConnectyCube API, user needs a session token, which provides a secure access to ConnectyCube API. <br />
 To create an application session use the following code::
 
+### Endpoint
+```javascript
+POST https://api.connectycube.com/session
+```
+
 ### Create Application Session
 ```javascript
 ConnectyCube.createSession()
   .then((session) => {})
   .catch((error) => {});
+```
+
+### Request Example
+```javascript
+curl -X POST \
+-H "Content-Type: application/json" \
+-d '{"application_id": "1", "auth_key": "29WfrNWdvkhmX6V", "nonce": "4214611091", "timestamp": "1544010993",  "signature": "46fd163f78f52a0f8122d3758d6282923471d55f"}' \
+https://api.connectycube.com/session
 ```
 
 ### Response
@@ -53,6 +66,14 @@ const userCredentials = { login: "cubeuser", password: "awesomepwd" };
 ConnectyCube.createSession(userCredentials)
   .then((session) => {})
   .catch((error) => {});
+```
+
+### Request Example
+```javascript
+curl -X POST \
+-H "Content-Type: application/json" \
+-d '{"application_id": "1", "auth_key": "29WfrNWdvkhmX6V", "nonce": "111", "timestamp": "1544010993",  "signature": "46fd163f78f52a0f8122d3758d6282923471d55f", "user":{"login": "john", "password": "11111111"}}' \
+https://api.connectycube.com/session
 ```
 
 ### Response
