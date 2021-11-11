@@ -238,6 +238,80 @@ ConnectyCube.chat
 ```javascript
 ```
 
+## Create Dialog (Group Chat)
+You need to pass type: 2 and ids of opponents you want to create a chat with:
+
+### Code
+```javascript
+const params = {
+  type: 2,
+  name: "Friday party",
+  occupants_ids: [29085, 29086, 29087],
+  description: "lets dance the night away",
+  photo: "party.jpg",
+};
+
+ConnectyCube.chat.dialog
+  .create(params)
+  .then((dialog) => {})
+  .catch((error) => {});
+```
+
+### API
+```javascript
+curl -X POST \
+-H "Content-Type: application/json" \
+-H "CB-Token: <TOKEN>" \
+-d '{"type":2,"name":"Friday party","occupants_ids":"29085,29086,29087","description":"lets dance the night away","photo":"party.jpg"}' \
+https://api.connectycube.com/chat/Dialog
+```
+
+### Response
+```javascript
+{
+  "_id": "5c091060e588ce59fdf873dc",
+  "admins_ids": [],
+  "created_at": "2018-12-06T12:04:48Z",
+  "description": "lets dance the night away",
+  "last_message": null,
+  "last_message_date_sent": null,
+  "last_message_id": null,
+  "last_message_user_id": null,
+  "name": "Friday party",
+  "occupants_ids": [29085, 29086, 29087],
+  "photo": "party.jpg",
+  "pinned_messages_ids": [],
+  "type": 2,
+  "updated_at": "2018-12-06T12:04:48Z",
+  "user_id": 29085,
+  "unread_messages_count": 0,
+  "xmpp_room_jid": "105_5c091060e588ce59fdf873dc@muc.chatstage.connectycube.com"
+}
+```
+
+## Add Users To Dialog (Update Dialog)
+
+
+### Code
+```javascript
+const userCredentials = {
+  userId: 4448514,
+  password: "awesomepwd",
+};
+
+ConnectyCube.chat
+  .connect(userCredentials)
+  .then(() => {
+    // connected
+  })
+  .catch((error) => {});
+```
+
+### API
+
+### Response
+```javascript
+```
 
 
 
