@@ -15,9 +15,6 @@ const CREDENTIALS = {
 ConnectyCube.init(CREDENTIALS);
 ```
 
-### API
-
-### Response
 
 
 ## Create a session
@@ -159,7 +156,13 @@ ConnectyCube.users
 If you have an application session, you can upgrade it to a user session by calling login method. <br />
 This login method will create a user session and make the user logged in.
 If the user is not registered to connecty cube, it will be added to user list.
+There are four available sets of data to specify when authenticate a user:
+- login and password
+- email and password
+- provider + keys[token] and keys[secret] - when sign up with Facebook or Twitter
+- provider + firebase_phone[project_id] and firebase_phone[access_token] - when sign up with a phone number
 
+** - Important note - login and password is required!
 
 ### Code
 ```javascript
@@ -172,7 +175,18 @@ ConnectyCube.login(userCredentials)
   .catch((error) => {});
 ```
 
-### API
+### Endpoint
+POST https://api.connectycube.com/login
+
+
+### Request Example
+```javascript
+curl -X POST \
+-H "Content-Type: application/json" \
+-H "CB-Token:  <TOKEN>" \
+-d '{"login": "johnsmith", "password": "7665727zxc"}' \
+https://api.connectycube.com/login
+```
 
 ### Response
 ```javascript
