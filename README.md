@@ -689,8 +689,8 @@ There are different roles of users in a chat dialog:
  Roles  | Private chat	 | Group chat	  | Public chat	 | Broadcast
 ------------- | ------------- | ------------- | ------------- | ------------- 
 Regular user  | - send/receive messages <br/> - delete own message (one side/both sides) <br/> - delete chat dialog for themselve  | - send/receive messages <br/> - delete own message (one side/both sides) <br/> - delete chat dialog for themselve <br/> - add more users <br /> - change name, photo, description  | - send/receive messages <br/> - delete own message (one side/both sides) <br/> - delete chat dialog for themselves (or unsubscribe)  | - receive messages <br/> - delete chat dialog for themselve
-Admin  | -  | Content Cell  | Content Cell  | Content Cell 
-Super admin  | -  | Content Cell  | Content Cell  | Content Cell 
+Admin  | -  | - delete any messages for everyone <br/> - pin messages <br/> - add/remove users <br/> - regular user privileges  | - change name, description, photo <br/> - delete any messages for everyone <br/> - pin messages <br/> -block/unblock users <br/> - regular user privileges | - change name, description, photo <br/> - delete any messages for everyone <br/> - pin messages <br/> -block/unblock users 
+Super admin  | -  |  - add/remove admins <br/> - delete dialog for everyone <br/> - regular admin privileges  | - add/remove admins <br/> - delete dialog for everyone <br/> - regular admin privileges  | - add/remove admins <br/> - delete dialog for everyone 
 
 
 
