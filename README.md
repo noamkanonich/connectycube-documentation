@@ -113,6 +113,7 @@ ConnectyCube.users
 ### API
 
 ### Response
+```javascript
 {
   "id": 81,
   "full_name": "Marvin Simon",
@@ -131,7 +132,7 @@ ConnectyCube.users
   "avatar": "",
   "user_tags": "iphone,apple"
 }
-
+```
 
 ## User Sign In (Login)
 If you have an application session, you can upgrade it to a user session by calling login method. <br />
@@ -153,6 +154,7 @@ ConnectyCube.login(userCredentials)
 ### API
 
 ### Response
+```javascript
 {
   "id": 47592,
   "full_name": "John Smith",
@@ -171,9 +173,7 @@ ConnectyCube.login(userCredentials)
   "avatar": null,
   "user_tags": null
 }
-
-
-
+```
 
 
 
