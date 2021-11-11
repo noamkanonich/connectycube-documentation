@@ -310,7 +310,7 @@ ConnectyCube.chat.dialog
 ```
 
 ### Remove Users
-Important note: Only group chat owner can remove other users from group chat.
+**- Important note: Only group chat owner can remove other users from group chat.**
 
 ```javascript
 const dialogId = "5356c64ab35c12bd3b108a41";
