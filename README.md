@@ -16,7 +16,6 @@ ConnectyCube.init(CREDENTIALS);
 ```
 
 
-
 ## Create a session
 For using the ConnectyCube API, user needs a session token, which provides a secure access to ConnectyCube API. <br />
 To create an application session use the following code::
@@ -39,6 +38,24 @@ curl -X POST \
 -H "Content-Type: application/json" \
 -d '{"application_id": "1", "auth_key": "29WfrNWdvkhmX6V", "nonce": "4214611091", "timestamp": "1544010993",  "signature": "46fd163f78f52a0f8122d3758d6282923471d55f"}' \
 https://api.connectycube.com/session
+```
+
+### Python
+```python
+import requests
+from requests.structures import CaseInsensitiveDict
+
+url = "https://api.connectycube.com/session"
+
+headers = CaseInsensitiveDict()
+headers["Content-Type"] = "application/json"
+
+data = '{"application_id": "1", "auth_key": "29WfrNWdvkhmX6V", "nonce": "4214611091", "timestamp": "1544010993",  "signature": "46fd163f78f52a0f8122d3758d6282923471d55f"}'
+
+
+resp = requests.post(url, headers=headers, data=data)
+
+print(resp.status_code)
 ```
 
 ### Response
