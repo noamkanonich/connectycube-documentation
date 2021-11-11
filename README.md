@@ -176,8 +176,67 @@ ConnectyCube.login(userCredentials)
 ```
 
 
+## Authentication via external identity provider
 
 
+
+### Code
+```javascript
+
+```
+
+### API
+
+### Response
+```javascript
+
+```
+
+
+
+## Delete User
+A user can delete himself from the platform:
+
+
+### Code
+```javascript
+ConnectyCube.users
+  .delete()
+  .then((result) => {})
+  .catch((error) => {});
+```
+
+### API
+
+### Response
+```javascript
+
+```
+
+
+## Connect To Chat
+In order for user to use the connectycube chat api, you need to setup real-time connection with ConnectyCube Chat server and use it to exchange data.
+
+### Code
+```javascript
+const userCredentials = {
+  userId: 4448514,
+  password: "awesomepwd",
+};
+
+ConnectyCube.chat
+  .connect(userCredentials)
+  .then(() => {
+    // connected
+  })
+  .catch((error) => {});
+```
+
+### API
+
+### Response
+```javascript
+```
 
 
 
