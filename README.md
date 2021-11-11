@@ -326,12 +326,13 @@ ConnectyCube.chat.dialog
 PUT https://api.connectycube.com/chat/Dialog/{dialog_id}
 
 ### Request Example
+```javascript
 curl -X PUT \
 -H "Content-Type: application/json" \
 -H "CB-Token: <TOKEN>" \
 -d '{"name":"Crossfit2","push_all":{"occupants_ids":[29088],"pinned_messages_ids":["5c123fdce588ce064043f53a"]},"photo":"gym2.jpeg"}' \
 https://api.connectycube.com/chat/Dialog/5c123f75e588ce063e43f541
-
+```
 
 ### Response
 ```javascript
@@ -360,23 +361,28 @@ https://api.connectycube.com/chat/Dialog/5c123f75e588ce063e43f541
   
 
 ## Remove Dialog 
-
+Remove/Delete a dialog 
 
 ### Code
 ```javascript
+// Remove single dialog
+const dialogId = "5356c64ab35c12bd3b108a41";
 
+// Remove multiple dialogs
+const dialogIds = ['5356c64ab35c12bd3b108a41', ..., '5356c64ab35c12bd3b108a84']
+
+ConnectyCube.chat.dialog.delete(dialogId).catch((error) => {});
 ```
 
 ### Endpoint
-PUT https://api.connectycube.com/chat/Dialog/{dialog_id}
+DELETE https://api.connectycube.com/chat/Dialog/{dialog_id}
 
 ### Request Example
-curl -X PUT \
--H "Content-Type: application/json" \
+```javascript
+curl -X DELETE \
 -H "CB-Token: <TOKEN>" \
--d '{"name":"Crossfit2","push_all":{"occupants_ids":[29088],"pinned_messages_ids":["5c123fdce588ce064043f53a"]},"photo":"gym2.jpeg"}' \
-https://api.connectycube.com/chat/Dialog/5c123f75e588ce063e43f541
-
+https://api.connectycube.com/chat/Dialog/5c091060e588ce59fdf873dc
+```
 
 ### Response
 ```javascript
