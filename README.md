@@ -407,6 +407,24 @@ curl -X POST \
 https://api.connectycube.com/chat/Dialog
 ```
 
+### Python
+```python
+import requests
+from requests.structures import CaseInsensitiveDict
+
+url = "https://api.connectycube.com/chat/Dialog"
+
+headers = CaseInsensitiveDict()
+headers["Content-Type"] = "application/json"
+headers["CB-Token"] = "<TOKEN>"
+
+data = '{"type":2,"name":"Friday party","occupants_ids":"29085,29086,29087","description":"lets dance the night away","photo":"party.jpg"}'
+
+resp = requests.post(url, headers=headers, data=data)
+
+print(resp.status_code)
+```
+
 ### Response
 ```javascript
 {
@@ -472,6 +490,25 @@ curl -X PUT \
 https://api.connectycube.com/chat/Dialog/5c123f75e588ce063e43f541
 ```
 
+### Python
+```python
+import requests
+from requests.structures import CaseInsensitiveDict
+
+url = "https://api.connectycube.com/chat/Dialog/5c123f75e588ce063e43f541"
+
+headers = CaseInsensitiveDict()
+headers["Content-Type"] = "application/json"
+headers["CB-Token"] = "<TOKEN>"
+
+data = '{"name":"Crossfit2","push_all":{"occupants_ids":[29088],"pinned_messages_ids":["5c123fdce588ce064043f53a"]},"photo":"gym2.jpeg"}'
+
+resp = requests.put(url, headers=headers, data=data)
+
+print(resp.status_code)
+```
+
+
 ### Response
 ```javascript
 {
@@ -522,6 +559,21 @@ curl -X DELETE \
 https://api.connectycube.com/chat/Dialog/5c091060e588ce59fdf873dc
 ```
 
+### Python
+```python
+import requests
+from requests.structures import CaseInsensitiveDict
+
+url = "https://api.connectycube.com/chat/Dialog/5c091060e588ce59fdf873dc"
+
+headers = CaseInsensitiveDict()
+headers["CB-Token"] = "<TOKEN>"
+
+resp = requests.delete(url, headers=headers)
+
+print(resp.status_code)
+```
+
 ### Response
 ```javascript
 {
@@ -569,6 +621,22 @@ curl -X GET \
 -H "CB-Token: <TOKEN>" \
 https://api.connectycube.com/chat/Dialog
 ```
+
+### Python
+```python
+import requests
+from requests.structures import CaseInsensitiveDict
+
+url = "https://api.connectycube.com/chat/Dialog"
+
+headers = CaseInsensitiveDict()
+headers["CB-Token"] = "<TOKEN>"
+
+resp = requests.get(url, headers=headers)
+
+print(resp.status_code)
+```
+
 
 ### Response
 ```javascript
